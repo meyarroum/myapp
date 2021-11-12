@@ -4,5 +4,6 @@
 #buildproject
                 
                 - name: build app
+                  command : ng build --prod --aot --env:prod
+                  PATH: /root/.nvm/versions/node/v16.13.0/bin
 
-                  shell : ng build --prods
