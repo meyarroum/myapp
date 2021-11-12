@@ -1,5 +1,9 @@
----               
+---
+# tasks file for build
 - name: build app
-  command: ng build --prod --aot --env:prod
-  PATH: /root/.nvm/versions/node/v16.13.0/bin
+  command: ng build --prod
+  environment:
+    PATH: /root/.nvm/versions/node/v16.13.0/bin
 
+
+ss
