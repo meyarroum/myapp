@@ -11,7 +11,7 @@ pipeline {
                script {
                checkout([$class: 'GitSCM', branches: [[name: '*/main']],
                 userRemoteConfigs: [[ 
-                    credentialsId: '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',
+                    credentialsId: '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',
                     url: 'https://github.com/meyarroum/myapp.git']]])
 }
 
@@ -33,6 +33,15 @@ pipeline {
             steps {
                script {
                sh "ansible-playbook Ansible/build.yml -i Ansible/inventory/host.yml "
+                
+}
+
+            }
+        }
+        stage ('docker') {
+            steps {
+               script {
+               sh "ansible-playbook Ansible/docker.yml -i Ansible/inventory/host.yml "
                 
 }
 
