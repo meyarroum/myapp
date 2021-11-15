@@ -9,9 +9,9 @@ pipeline {
        stage ('Pull') {
             steps {
                script {
-               checkout([$class: 'GitSCM', branches: [[name: '*/main']],
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']],
                 userRemoteConfigs: [[ 
-                    credentialsId: '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',
+                    credentialsId: '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',
                     url: 'https://github.com/meyarroum/myapp.git']]])
 }
 
@@ -38,7 +38,9 @@ pipeline {
 
             }
         }
-        stage ('docker') {
+
+
+       stage ('docker') {
             steps {
                script {
                sh "ansible-playbook Ansible/docker.yml -i Ansible/inventory/host.yml "
@@ -49,18 +51,7 @@ pipeline {
         }
 
 
+
  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
