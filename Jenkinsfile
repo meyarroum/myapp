@@ -9,9 +9,9 @@ pipeline {
        stage ('Pull') {
             steps {
                script {
-               checkout([$class: 'GitSCM', branches: [[name: '*/master']],
+               checkout([$class: 'GitSCM', branches: [[name: '*/main']],
                 userRemoteConfigs: [[ 
-                    credentialsId: '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',
+                    credentialsId: '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',
                     url: 'https://github.com/meyarroum/myapp.git']]])
 }
 
