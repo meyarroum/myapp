@@ -11,7 +11,7 @@ pipeline {
                script {
                checkout([$class: 'GitSCM', branches: [[name: '*/main']],
                 userRemoteConfigs: [[ 
-                    credentialsId: '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',
+                    credentialsId: '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',
                     url: 'https://github.com/meyarroum/myapp.git']]])
 }
 
